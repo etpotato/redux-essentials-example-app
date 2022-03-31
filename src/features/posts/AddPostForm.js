@@ -13,12 +13,7 @@ const AddPostForm = () => {
   const handleTextChange = (evt) => setText(evt.target.value);
   const handleFormSubmit = (evt) => {
     evt.preventDefault();
-    const newPost = {
-      id: nanoid(),
-      title,
-      content: text,
-    };
-    if (title && text) dispatch(postAdded(newPost));
+    if (title && text) dispatch(postAdded(title, text));
 
     setTitle('');
     setText('');
